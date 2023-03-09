@@ -15,7 +15,25 @@
   <%= f.submit "投稿" %>
 <% end %>
 
-<% @books.each do |book| %>
-  <%= book.title %>
-  <%= book.body %>
-<% end %>
+
+<h1>Books</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>opinion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @books.each do |book| %>
+    <tr>
+      <td>
+        <%= book.title %>
+      </td>
+      <td>
+        <%= book.body %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
