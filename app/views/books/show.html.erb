@@ -1,3 +1,18 @@
+<h1>User info</h1>
+<%= image_tag current_user.get_profile_image(100, 100) %>
+<p>name<%= current_user.name %></p>
+<p>introduction <%= current_user.introduction %></p>
+<%= link_to "edit", edit_user_path(current_user.id) %>
+
+<h2>New book</h2>
+<%= form_with model: @book do |f| %>
+  <p>title</p>
+  <%= f.text_field :title %>
+  <p>body</p>
+  <%= f.text_area :body %>
+  <%= f.submit "投稿" %>
+<% end %>
+
 <h1>Book detail</h1>
 <%= image_tag @book.user.get_profile_image(100, 100) %>
 <%= @book.user.name %>
