@@ -1,21 +1,36 @@
-<% if @user.errors.any? %>
-  <%= @user.errors.count %>error
-    </ul>
-      <% @user.errors.full_messages.each do |message| %>
-        <li>
-          <%= message %>
-        </li>
+<div class="container">
+  <div class="row">
+    <div class="mx-auto">
+      <h1>User info</h1>
+      <% if @user.errors.any? %>
+        <%= @user.errors.count %>error
+          </ul>
+            <% @user.errors.full_messages.each do |message| %>
+              <li>
+                <%= message %>
+              </li>
+            <% end %>
+          </ul>
       <% end %>
-    </ul>
-<% end %>
-<h1>User info</h1>
-<%= form_with model: @user do |f| %>
-  <p>Name</p>
-  <%= f.text_field :name, placeholder: @user.name %>
-  <p>Image</p>
-  <%= f.file_field :profile_image, accept:"image/*" %>
-  <p>Introduction</p>
-  <%= f.text_area :introduction %>
-  <%= f.submit "Update User"%>
-<% end %>
+      <div>
+        <%= form_with model: @user do |f| %>
+        <div class="form-group">
+          <p>Name</p>
+          <%= f.text_field :name, placeholder: @user.name, class:"form-control" %>
+          <p>Image</p>
+          <%= f.file_field :profile_image, accept:"image/*" %>
+          <p>Introduction</p>
+          <%= f.text_area :introduction, class:"form-control" %>
+          <%= f.submit "Update User", class:"btn btn-bolck btn-secondary" %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  
+
 
