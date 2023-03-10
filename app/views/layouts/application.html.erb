@@ -13,59 +13,58 @@
 
   <body>
     <header>
-      <nav class="navbar navbar-expand navbar-dark bg-dark">
+      <nav class="navbar navbar-expand navbar-dark text-white bg-dark">
         <div class="container">
           <a class="navbar-brand" href="/">Bookers</a>
           <div class="collapse navbar-collapse">
             <ul class="navbar-nav ml-auto">
               <% if user_signed_in? %>
                 <li>
-                  <%= link_to user_path(current_user.id) do %>
+                  <%= link_to user_path(current_user.id), class:"text-white" do %>
                     <i class="fas fa-home"></i>
                     Home
                   <% end %>
-                </li>
                 <li>
-                  <%= link_to users_path do %>
+                  <%= link_to users_path, class:"text-white" do %>
                     <i class="fas fa-users"></i>
                     Users
                   <% end %>
                 </li>
                 <li>
-                  <%= link_to books_path do %>
+                  <%= link_to books_path, class:"text-white" do %>
                     <i class="fas fa-book-open"></i>
                     Books
                   <% end %>
                 </li>
                 <li>
-                  <%= link_to destroy_user_session_path, method: :delete do %>
+                  <%= link_to destroy_user_session_path, method: :delete, class:"text-white" do %>
                     <i class="fas fa-sign-out-alt"></i>
                     Log out
                   <% end %>
                 </li>
               <% else %>
                 <li>
-                  <%= link_to root_path do %>
+                  <%= link_to root_path, class:"text-white" do %>
                     <i class="fas fa-home"></i>
                     Home
                   <% end %>
                 </li>
                 <li>
-                  <%= link_to homes_about_path do %>
+                  <%= link_to home_about_path, class:"text-white" do %>
                     <i class="fas fa-link"></i>
                     About
                   <% end %>
                 </li>
                 <li>
-                  <%= link_to new_user_registration_path do %>
+                  <%= link_to new_user_registration_path, class:"text-white" do %>
                     <i class="fas fa-user-plus"></i>
                     Sign up
                   <% end %>
                 </li>
                 <li>
-                  <%= link_to new_user_session_path do %>
+                  <%= link_to new_user_session_path, class:"text-white" do %>
                     <i class="fas fa-sign-in-alt"></i>
-                    log in
+                    Log in
                   <% end %>
                 </li>
               <% end %>
