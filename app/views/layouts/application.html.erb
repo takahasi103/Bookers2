@@ -76,6 +76,7 @@
     <% if flash[:notice] %>
       <%= flash[:notice] %>
     <% end %>
+    <div><%= render 'searches/form' %></div>
     <%= yield %>
     
     <footer>
